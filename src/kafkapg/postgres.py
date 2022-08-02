@@ -9,7 +9,7 @@ def db_script(pg_uri, message):
             with conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cur:
                 create_script = ''' CREATE TABLE IF NOT EXISTS webmetrics (
                                     id     SERIAL PRIMARY KEY,
-                                    url    varchar(100) NOT NULL,
+                                    url    varchar(500) NOT NULL,
                                     response_time  float(4) NOT NULL,
                                     status_code SMALLINT NOT NULL,
                                     pattern varchar(50) NOT NULL)'''
